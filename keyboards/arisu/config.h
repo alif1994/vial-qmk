@@ -27,6 +27,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT         arisu
 #define DESCRIPTION     alice counterpart keyboard
 
+#define VIAL_KEYBOARD_UID {0xFA, 0xC7, 0x81, 0xDA, 0x52, 0xAD, 0x50, 0x43}
+
 /* key matrix size */
 #define MATRIX_ROWS 5
 #define MATRIX_COLS 15

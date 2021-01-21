@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MANUFACTURER    imchipwood
 #define PRODUCT         dumbpad
 
-#define VIAL_KEYBOARD_UID {0xA4, 0x39, 0x44, 0xF2, 0x0A, 0x5F, 0x74, 0x36}
+#define VIAL_KEYBOARD_UID {0x47, 0x15, 0x48, 0x86, 0x60, 0x08, 0x58, 0x1B}
 
 /* Column/Row IO definitions */
 #define DIODE_DIRECTION COL2ROW
