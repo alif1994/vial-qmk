@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     KC_7,      KC_8,    KC_9,             KC_BSPC,
                     KC_4,      KC_5,    KC_6,             KC_ESC,
                     KC_1,      KC_2,    KC_3,             KC_TAB,
-        KC_A,    KC_A,     KC_A,    KC_A,   KC_ENTER
+        KC_MUTE,    MO(1),     KC_0,    KC_DOT,           KC_ENTER
     ),
     /*
             SUB LAYER
@@ -50,19 +50,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                     _______,     _______,     _______,      RESET,
                     _______,     _______,     _______,      KC_KP_PLUS,
                     _______,     _______,     _______,      KC_KP_MINUS,
-        KC_B,    _______,     _______,     _______,      KC_EQL
+        KC_A,       _______,     _______,     _______,      KC_EQL
     ),
 };
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    // If console is enabled, it will print the matrix position and status of each key pressed
-/*
-#ifdef CONSOLE_ENABLE
-    uprintf("KL: kc: %u, col: %u, row: %u, pressed: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed);
-#endif
-*/
-    return true;
-}
 
 void keyboard_post_init_user(void) {
     // Customise these values to desired behaviour
@@ -72,35 +62,35 @@ void keyboard_post_init_user(void) {
     //debug_mouse = true;
 }
 
-void encoder_update_user(uint8_t index, bool clockwise) {
-    /*  Custom encoder control - handles CW/CCW turning of encoder
-     *  Default behavior:
-     *    main layer:
-     *       CW: move mouse right
-     *      CCW: move mouse left
-     *    other layers:
-     *       CW: = (equals/plus - increase slider in Adobe products)
-     *      CCW: - (minus/underscore - decrease slider in adobe products)
-     */
-    if (index == 0) {
-        switch (get_highest_layer(layer_state)) {
-            case 0:
-                // main layer - move mouse right (CW) and left (CCW)
-                if (clockwise) {
-                    tap_code(KC_A);
-                } else {
-                    tap_code(KC_B);
-                }
-                break;
+// void encoder_update_user(uint8_t index, bool clockwise) {
+//     /*  Custom encoder control - handles CW/CCW turning of encoder
+//      *  Default behavior:
+//      *    main layer:
+//      *       CW: move mouse right
+//      *      CCW: move mouse left
+//      *    other layers:
+//      *       CW: = (equals/plus - increase slider in Adobe products)
+//      *      CCW: - (minus/underscore - decrease slider in adobe products)
+//      */
+//     if (index == 0) {
+//         switch (get_highest_layer(layer_state)) {
+//             case 0:
+//                 // main layer - move mouse right (CW) and left (CCW)
+//                 if (clockwise) {
+//                     tap_code(KC_A);
+//                 } else {
+//                     tap_code(KC_B);
+//                 }
+//                 break;
 
-            default:
-                // other layers - =/+ (quals/plus) (CW) and -/_ (minus/underscore) (CCW)
-                if (clockwise) {
-                    tap_code(KC_EQL);
-                } else {
-                    tap_code(KC_MINS);
-                }
-                break;
-        }
-    }
-}
+//             default:
+//                 // other layers - =/+ (quals/plus) (CW) and -/_ (minus/underscore) (CCW)
+//                 if (clockwise) {
+//                     tap_code(KC_EQL);
+//                 } else {
+//                     tap_code(KC_MINS);
+//                 }
+//                 break;
+//         }
+//     }
+// }
