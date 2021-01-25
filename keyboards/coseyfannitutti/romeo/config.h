@@ -26,6 +26,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT         ROMEO
 #define DESCRIPTION     staggered layout 40% keyboard assembled with only through hole components
 
+#define VIAL_KEYBOARD_UID {0x06, 0xD4, 0xFB, 0x62, 0x5D, 0x48, 0x17, 0x9B}
+
+#define VIAL_UNLOCK_COMBO_ROWS { 0, 1 }
+#define VIAL_UNLOCK_COMBO_COLS { 0, 11 }
+
 /* key matrix size */
 #define MATRIX_ROWS 4
 #define MATRIX_COLS 12
