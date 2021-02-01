@@ -28,6 +28,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DESCRIPTION     4x4 macro/numpad with rotary encoder
 
 #define VIAL_KEYBOARD_UID {0xF6, 0x1C, 0x56, 0x63, 0xB4, 0x7A, 0xE1, 0xBA}
+#define VIAL_UNLOCK_COMBO_ROWS { 0, 3 }
+#define VIAL_UNLOCK_COMBO_COLS { 1, 4 }
 
 
 /*
@@ -60,6 +62,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Bootmagic - hold down rotary encoder pushbutton while plugging in to enter bootloader */
 #define BOOTMAGIC_LITE_ROW 3
 #define BOOTMAGIC_LITE_COLUMN 0
+
+#define TAPPING_TOGGLE 2
 
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
